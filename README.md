@@ -14,11 +14,11 @@ Para executar o projeto, será necessário instalar os seguintes programas:
 
 ## Tecnologias Utilizadas
 
-[Angular Material 8.2.3](https://v8.material.angular.io/)
+- [Angular Material 8.2.3](https://v8.material.angular.io/)
 
 ## Configuração
 
-Para executar o projeto, é ncessário seguir o seguintes passos:
+Para executar o projeto, é necessário seguir o seguintes passos:
 
 No terminal do SO, ir para o diretorio raiz do projeto;
 
