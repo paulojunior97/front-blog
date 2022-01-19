@@ -1,27 +1,31 @@
 # FrontBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
+Projeto usado para interação do usuário com o mini blog
 
-## Development server
+## Começando
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para executar o projeto, será necessário instalar os seguintes programas:
 
-## Code scaffolding
+[Node 10.9.0](https://nodejs.org/en/)
+[Angular CLI: 8.3.29](https://angular.io/cli)
+[Angular: 8.2.14](https://angular.io/)
+[NPM: 6.2.0](https://www.npmjs.com/)
+[VS Code](https://code.visualstudio.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias Utilizadas
 
-## Build
+[Angular Material 8.2.3](https://v8.material.angular.io/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Configuração
 
-## Running unit tests
+Para executar o projeto, é ncessário seguir o seguintes passos:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+No terminal do SO, ir para o diretorio raiz do projeto;
 
-## Running end-to-end tests
+Executar o comando "npm intall", na hora de iniciar o projeto e quando baixar uma nova dependência;
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Executar o comando "ng s";
 
-## Further help
+Acessar um browser de sua preferência, e colocar a URL "http://localhost:4200/login";
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Após inicialização do projeto back-end [apiBlog](https://github.com/paulojunior97/apiblog), pode está operando o sistema;
