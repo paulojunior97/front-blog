@@ -1,0 +1,24 @@
+<div style="display: flex">
+  <h3>Imagens</h3>
+  <label for="upload-photo" style="margin-left: 20px; margin-top: 18px">
+    <div style="display: flex">
+      <mat-icon>add_circle_outline</mat-icon>
+      <div style="padding-left: 5px; padding-top: 2px">
+        Add foto
+      </div>
+    </div>
+  </label>
+  <input type="file" name="photo" id="upload-photo" accept="image/*" [disabled]="disabledFoto" (change)="handleInputChange($event)" />
+</div>
+<div style="display: flex">
+  <div *ngFor="let foto of formArray.value; let index = index" style="width: 300px; padding: 0px 15px">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <mat-icon style="margin-left: auto; cursor: pointer" (click)="removerFoto(index)">close</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="container-foto">
+      <img [src]="foto" style="max-width:300px;max-height:300px"/>
+    </div>
+  </div>
+</div>

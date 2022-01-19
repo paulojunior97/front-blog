@@ -1,0 +1,44 @@
+<h1>Cadastro de Usuário</h1>
+<div class="linha">
+  <div class="coluna">
+    <mat-form-field style="width: 100%">
+      <input type="text" matInput name="nome" id="nome" [formControl]="formGroup.get('nome')"/>
+      <mat-hint align="start">
+        <strong>Nome</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="coluna">
+    <mat-form-field style="width: 100%">
+      <input type="text" matInput name="email" id="email" [formControl]="formGroup.get('email')"/>
+      <mat-hint align="start">
+        <strong>Email</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+</div>
+<div class="linha">
+  <div class="coluna">
+    <mat-form-field style="width: 100%">
+      <input type="password" matInput name="senha" id="senha" [formControl]="formGroup.get('senha')"/>
+      <mat-hint align="start">
+        <strong>Senha</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="coluna">
+    <mat-form-field style="width: 100%">
+      <mat-select [formControl]="formGroup.get('perfil')">
+        <mat-option value="ADMIN">Admin</mat-option>
+        <mat-option value="CLIENTE">Cliente</mat-option>
+      </mat-select>
+      <mat-hint align="start">
+        <strong>Perfil</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+</div>
+<div class="acoes">
+  <button type="button" mat-raised-button [routerLink]="['../']">Cancelar</button>
+  <button type="button" mat-raised-button color="primary" (click)="cadastrar()">Salvar</button>
+</div>

@@ -1,0 +1,14 @@
+.linha {
+  display: flex;
+  justify-content: space-between;
+}
+
+.coluna {
+  width: 33%;
+  padding: 0px 10px;
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+}

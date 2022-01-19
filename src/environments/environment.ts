@@ -3,7 +3,29 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8090',
+  header: {
+    acoesHeaderAdmin: [
+      {
+        descricao: 'Cadastrar usuário',
+        icon: 'add_circle_outline',
+        rota: ['usuarios', 'cadastro']
+      }
+    ],
+    acoesHeaderCliente: [
+      {
+        descricao: 'Novo post',
+        icon: 'add_circle_outline',
+        rota: ['blog', 'cadastro-post']
+      },
+      {
+        descricao: 'Novo álbum',
+        icon: 'add_circle_outline',
+        rota: ['blog', 'cadastro-album']
+      }
+    ]
+  }
 };
 
 /*

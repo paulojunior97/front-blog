@@ -1,0 +1,43 @@
+<h1>Incluir novo post</h1>
+
+<mat-form-field class="example-full-width" style="width: 100%">
+    <textarea matInput placeholder="No que você está pensando?" [formControl]="formGroupPost.get('conteudo')"></textarea>
+</mat-form-field>
+
+<h3>Informe alguns links importantes</h3>
+<div class="linha">
+  <div class="coluna">
+    <mat-form-field style="width: 100%">
+      <input type="text" matInput name="link" id="link" [formControl]="formGroupLink.get('url')"/>
+      <mat-hint align="start">
+        <strong>Link</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="coluna">
+    <mat-form-field style="width: 100%">
+      <input type="text" matInput name="descricao" id="descricao" [formControl]="formGroupLink.get('descricao')"/>
+      <mat-hint align="start">
+        <strong>Descrição</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+  <div class="coluna" style="line-height: 4">
+    <button mat-raised-button [disabled]="disabledLink" (click)="addLink()">Adicionar</button>
+  </div>
+</div>
+<div style="padding: 20px 0px">
+  <div class="linha" *ngFor="let link of formGroupPost.get('links').value; let index = index" style="width: 50%">
+    <div>
+      <a href="{{link.link}}">{{link.descricao}}</a>
+    </div>
+    <div>
+      <mat-icon matTooltip="Remover link" style="cursor: pointer" (click)="removerLink(index)">remove_circle_outline</mat-icon>
+    </div>
+  </div>
+</div>
+<app-upload-imagens [formArray]="formGroupPost.get('imagensBase64')"></app-upload-imagens>
+<div class="acoes">
+  <button mat-raised-button [routerLink]="'../feed-noticias'">Cancelar</button>
+  <button mat-raised-button color="primary" style="margin-left: 10px" (click)="salvarPost()">Salvar</button>
+</div>

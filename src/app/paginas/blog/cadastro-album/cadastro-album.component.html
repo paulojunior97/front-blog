@@ -1,0 +1,10 @@
+<h1>Incluir novo álbum</h1>
+
+<mat-form-field class="example-full-width" style="width: 100%">
+  <textarea matInput placeholder="Descreva esse álbum..." [formControl]="formGroup.get('descricao')"></textarea>
+</mat-form-field>
+<app-upload-imagens [formArray]="formGroup.get('fotosBase64')"></app-upload-imagens>
+<div class="acoes">
+  <button mat-raised-button [routerLink]="'../feed-noticias'">Cancelar</button>
+  <button mat-raised-button color="primary" style="margin-left: 10px" (click)="salvarAlbum()">Salvar</button>
+</div>

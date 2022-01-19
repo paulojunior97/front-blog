@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" style="position: fixed; z-index: 2">
+  <mat-toolbar-row>
+    <span class="logo-empresa">Blog Framework</span>
+    <div class="botoes-central">
+      <div *ngFor="let acao of acoes">
+        <button type="button" class="btn-acao" (click)="clickAction(acao.rota)">
+          <mat-icon>{{acao.icon}}</mat-icon>
+          <div style="padding-left: 5px">{{acao.descricao}}</div>
+        </button>
+      </div>
+    </div>
+    <div class="botoes-lateral">
+      <button type="button" class="btn-acao" [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+        <div style="padding-left: 5px">{{nomeUsuarioLogado}}</div>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="sairSistema()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sair</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+    <app-conteudo class="conteudo"></app-conteudo>
+</div>

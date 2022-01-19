@@ -1,0 +1,90 @@
+<mat-card class="example-card">
+  <div style="text-align: center">
+    <h3>{{publicacao.titulo}}</h3>
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <div>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{publicacao?.criador?.nome}}</mat-card-title>
+        <mat-card-subtitle>{{publicacao?.dataPublicacao | date: 'dd/MM/yyyy HH:mm'}}</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" style="margin-left: auto">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="removerPublicacao()">
+          <mat-icon>delete_forever</mat-icon>
+          <span>Remover</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <mat-card-content>
+    <p>
+      {{publicacao?.descricao}}
+    </p>
+    <div *ngIf="publicacao.links" style="padding: 10px 0px">
+      <h4>Links Importantes</h4>
+      <div style="display: flex">
+        <div style="padding: 0px 10px" *ngFor="let link of publicacao?.links">
+          <a href="{{link.url}}">{{link.descricao}}</a>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; margin-bottom: 15px">
+      <div *ngFor="let foto of publicacao?.imagensBase64; let index = index" style="width: 300px; padding: 0px 15px">
+        <div class="container-foto">
+          <img [src]="foto" style="max-width:300px;max-height:300px"/>
+        </div>
+      </div>
+    </div>
+    <mat-accordion *ngIf="publicacao?.titulo === 'Post'">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{publicacao?.comentarios ? publicacao.comentarios.length : 0}} comentários
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div>
+          <mat-card class="example-card" style="margin: 10px 0px" *ngFor="let comentario of publicacao?.comentarios">
+            <div style="display: flex; justify-content: space-between">
+              <div>
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{comentario?.autor?.nome}}</mat-card-title>
+                  <mat-card-subtitle>{{comentario?.data | date: 'dd/MM/yyyy HH:mm'}}</mat-card-subtitle>
+                </mat-card-header>
+              </div>
+              <div>
+                <button mat-icon-button [matMenuTriggerFor]="menu1" style="margin-left: auto">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu1="matMenu">
+                  <button mat-menu-item (click)="removerComentario(comentario.id)">
+                    <mat-icon>delete_forever</mat-icon>
+                    <span>Remover</span>
+                  </button>
+                </mat-menu>
+              </div>
+            </div>
+            <mat-card-content>
+              <p>
+                {{comentario?.conteudo}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+  <mat-card-actions *ngIf="publicacao?.titulo === 'Post'">
+    <mat-form-field class="example-full-width" style="width: 95%; padding-right: 25px">
+      <textarea matInput placeholder="Comente algo..." id="comentario" name="comentario" [formControl]="formControl"></textarea>
+    </mat-form-field>
+    <mat-icon style="cursor: pointer" (click)="addComentario()">send</mat-icon>
+  </mat-card-actions>
+</mat-card>

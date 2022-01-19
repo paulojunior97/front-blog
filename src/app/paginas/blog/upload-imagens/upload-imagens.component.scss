@@ -1,0 +1,23 @@
+.container-foto {
+  width: 300px;
+  height: 300px;
+  background: #666666;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.mat-toolbar-multiple-rows {
+  min-height: 35px;
+  max-height: 40px;
+}
+
+label {
+  cursor: pointer;
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
