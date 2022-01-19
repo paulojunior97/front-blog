@@ -6,11 +6,11 @@ Projeto usado para interação do usuário com o mini blog
 
 Para executar o projeto, será necessário instalar os seguintes programas:
 
-[Node 10.9.0](https://nodejs.org/en/)
-[Angular CLI: 8.3.29](https://angular.io/cli)
-[Angular: 8.2.14](https://angular.io/)
-[NPM: 6.2.0](https://www.npmjs.com/)
-[VS Code](https://code.visualstudio.com/)
+- [Node 10.9.0](https://nodejs.org/en/)
+- [Angular CLI: 8.3.29](https://angular.io/cli)
+- [Angular: 8.2.14](https://angular.io/)
+- [NPM: 6.2.0](https://www.npmjs.com/)
+- [VS Code](https://code.visualstudio.com/)
 
 ## Tecnologias Utilizadas
 
